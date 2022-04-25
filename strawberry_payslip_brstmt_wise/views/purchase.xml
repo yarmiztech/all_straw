@@ -1,0 +1,51 @@
+<odoo>
+
+    <record id="purchase_inherit_branch" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_view_search_branch" model="ir.ui.view">
+        <field name="name">purchase.order.search</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='draft']" position="after">
+                <field name="branch_id"/>
+                <filter string="Branch" name="branch_id"/>
+                <filter string='Branch' name="branch_id" domain="[]" context="{'group_by': 'branch_id'}"/>
+
+
+            </xpath>
+        </field>
+    </record>
+    <record id="hr_expense_view_form_branch" model="ir.ui.view">
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="before">
+                <field name="branch_id"/>
+            </xpath>
+        </field>
+    </record>
+<!--hr_expense_view_search-->
+    <record id="hr_expense_view_search_branch" model="ir.ui.view">
+        <field name="name">hr.expense.view.search</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_search"/>
+        <field name="arch" type="xml">
+             <xpath expr="//filter[@name='my_team_expenses']" position="after">
+                <field name="branch_id"/>
+                <filter string="Branch" name="branch_id"/>
+                <filter string='Branch' name="branch_id" domain="[]" context="{'group_by': 'branch_id'}"/>
+             </xpath>
+        </field>
+    </record>
+
+
+</odoo>

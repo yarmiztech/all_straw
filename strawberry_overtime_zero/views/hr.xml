@@ -1,0 +1,35 @@
+<odoo>
+    <record id="hr_employee_inheri_ove" model="ir.ui.view">
+        <field name="name">Hr Employee Inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_employee_view_form_inherit_timesheet"/>
+        <field name="arch" type="xml">
+<!--            <xpath expr="//field[@name='timesheet_cost']" position="before">-->
+<!--                <field name="overtime_monthly"/>-->
+<!--                <field name="overtime_hrs"/>-->
+            <xpath expr="//page[@name='hr_settings']/group/group[@name='timesheet']" position="inside">
+
+<!--                             attrs="{'invisible':[('payment_type','!=','timesheet')]}"-->
+
+                                <field name="overtime_monthly"/>
+                                <field name="overtime_hrs"/>
+
+            </xpath>
+        </field>
+    </record>
+
+
+ <record id="hr_contract_form_inherit_straw" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+              <xpath expr="//field[@name='structure_type_id']" position="after">
+                                <field name="overtime_monthly"/>
+                                <field name="overtime_hrs"/>
+                  <field name="offmonth_amount"/>
+            </xpath>
+        </field>
+ </record>
+
+</odoo>

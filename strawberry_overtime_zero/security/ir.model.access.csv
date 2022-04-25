@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_overtime_strawberry,overtime.strawberry,model_overtime_strawberry,,1,1,1,1
+access_overtime_straw_dates,overtime.straw.dates,model_overtime_straw_dates,,1,1,1,1
+access_overtime_straw_lines,overtime.straw.lines,model_overtime_straw_lines,,1,1,1,1

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--Adding a salary rule for loan-->
+	<data noupdate="0">
+
+        <record id="overtimestraw_seq" model="ir.sequence">
+            <field name="name">Over Time Strawberry</field>
+            <field name="code">overtime.strawberry</field>
+            <field name="prefix">OT/STRAW/</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>
+	</data>
+</odoo>

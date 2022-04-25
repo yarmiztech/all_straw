@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_branch_payslip,branch.payslip,model_branch_payslip,,1,1,1,1
+access_branch_payslip_lines,branch.payslip.lines,model_branch_payslip_lines,,1,1,1,1
